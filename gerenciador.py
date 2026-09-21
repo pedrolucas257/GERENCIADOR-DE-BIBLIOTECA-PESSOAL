@@ -6,7 +6,8 @@ from tkinter import messagebox
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+caminho_env = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+load_dotenv(dotenv_path=caminho_env)
 
 db_host = os.getenv("DB_HOST")
 db_user = os.getenv("DB_USER")
@@ -239,6 +240,5 @@ listar_livros()
 janela.mainloop()
 
 #Chamando funcões primarias
-#menu()
 cursor.close()
 conexao.close()
